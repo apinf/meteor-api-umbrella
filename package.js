@@ -7,7 +7,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom("1.0.1");
-  api.use(["meteor", "ddp", "jquery"]);
+  api.use(["meteor"]);
 
   api.addFiles("server/admin-api.js", ["server"]);
 
