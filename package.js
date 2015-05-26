@@ -9,8 +9,8 @@ Package.onUse(function(api) {
   api.versionsFrom("1.0.1");
   api.use(["meteor", "ddp", "jquery"]);
 
-  api.addFiles("shared/index.js", ["client", "server"]);
-  
+  api.addFiles("server/admin-api.js", ["server"]);
+
   api.export("apiUmbrella");
 });
 
@@ -18,5 +18,5 @@ Package.onTest(function (api) {
   api.use("tinytest");
   api.use("brylie:api-umbrella");
 
-  api.addFiles("tests/shared/index.js", ["client", "server"]);
+  api.addFiles("tests/server/admin-api.js", ["server"]);
 });
