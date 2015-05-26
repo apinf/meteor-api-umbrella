@@ -5,7 +5,7 @@ Wrapper for [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
 ## Installation
 
 ```
-    meteor add brylie:api-umbrella
+meteor add brylie:api-umbrella
 ```
 
 ## Description
