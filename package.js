@@ -11,7 +11,7 @@ Package.onUse(function(api) {
 
   api.addFiles("server/admin-api.js", ["server"]);
 
-  api.export("apiUmbrella");
+  api.export("apiUmbrella", ["server"]);
 });
 
 Package.onTest(function (api) {
