@@ -1,0 +1,3 @@
+/*
+Tests for the API Umbrella Admin API wrapper.
+*/
