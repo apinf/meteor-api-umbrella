@@ -32,3 +32,5 @@ This package exports an object called `apiUmbrellaWeb` that contains the followi
 * getUsers - gets all users
 * getApiBackend (id) - gets a specific API backend by ID
 * getApiBackends - gets all API backends
+* getAdmin (id) - get specific admin user by ID
+* getAdmins - get all admin users
