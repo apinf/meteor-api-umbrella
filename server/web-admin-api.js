@@ -7,17 +7,13 @@ apiUmbrellaWeb = {
   "requestHeaders": {
     "X-Api-Key": Meteor.settings.api_umbrella.api_key,
     "X-Admin-Auth-Token": Meteor.settings.api_umbrella.auth_token,
+    "Content-Type": "application/json"
   },
   /*
-  Get a specific user from API Umbrella Admin API
-  given a User ID
-  return the JSON user object or error
+  Get a response object from server
+  return response or error
   */
-  getUser: function (userId) {
-    // Set up base url with user ID
-    var url = this.baseUrl + "users/" + userId;
-
-    // Try to get the user object from server
+  getResponseObject: function (url) {
     try {
       var response = HTTP.get(url, {
         headers: this.requestHeaders
@@ -28,6 +24,17 @@ apiUmbrellaWeb = {
 
     // If successful, return the response object
     return response;
+  }
+  /*
+  Get a specific user from API Umbrella Admin API
+  given a User ID
+  return the JSON user object or error
+  */
+  getUser: function (userId) {
+    // Set up base url with user ID
+    var url = this.baseUrl + "users/" + userId;
+
+    return this.getResponseObject(url);
   },
   /*
   Get all users from API Umbrella Admin API
@@ -37,16 +44,27 @@ apiUmbrellaWeb = {
     // Set up base url for users
     var url = this.baseUrl + "users/";
 
-    // Try to get all users from server
-    try {
-      var response = HTTP.get(url, {
-        headers: this.requestHeaders,
-      });
-    } catch (error) {
-      return error;
-    }
+    return this.getResponseObject(url);
+  },
+  /*
+  Get a specific user from API Umbrella Admin API
+  given a User ID
+  return the JSON user object or error
+  */
+  getApiBackend: function (apiBackendId) {
+    // Set up base url with API Backend ID
+    var url = this.baseUrl + "apis/" + apiBackendId;
 
-    // If successful, return the response object
-    return response;
+    return this.getResponseObject(url);
+  },
+  /*
+  Get all users from API Umbrella Admin API
+  return the JSON user object or error
+  */
+  getApiBackends: function () {
+    // Set up base url for users
+    var url = this.baseUrl + "apis/";
+
+    return this.getResponseObject(url);
   }
 };
