@@ -12,7 +12,8 @@ apiUmbrellaWeb = {
   },
   /*
   Get a response object from server
-  return response or error
+  given a request URL
+  return response object
   */
   getResponseObject: function (url) {
     try {
@@ -27,44 +28,62 @@ apiUmbrellaWeb = {
     return response;
   },
   /*
-  Get a specific user from API Umbrella Admin API
-  given a User ID
+  Get a specific user given an ID
   return the JSON user object or error
   */
-  getUser: function (userId) {
-    // Set up base url with user ID
-    var url = this.baseUrl + "users/" + userId;
+  getUser: function (id) {
+    // Set up request url with ID
+    var url = this.baseUrl + "users/" + id;
 
     return this.getResponseObject(url);
   },
   /*
-  Get all users from API Umbrella Admin API
-  return the JSON user object or error
+  Get all users
+  return the JSON response object
   */
   getUsers: function () {
-    // Set up base url for users
+    // Set up request url
     var url = this.baseUrl + "users/";
 
     return this.getResponseObject(url);
   },
   /*
-  Get a specific user from API Umbrella Admin API
-  given a User ID
-  return the JSON user object or error
+  Get a specific API backend given an ID
+  return the JSON response object
   */
-  getApiBackend: function (apiBackendId) {
-    // Set up base url with API Backend ID
-    var url = this.baseUrl + "apis/" + apiBackendId;
+  getApiBackend: function (id) {
+    // Set up request url with ID
+    var url = this.baseUrl + "apis/" + id;
 
     return this.getResponseObject(url);
   },
   /*
-  Get all users from API Umbrella Admin API
-  return the JSON user object or error
+  Get all API backends
+  return the JSON response object
   */
   getApiBackends: function () {
-    // Set up base url for users
+    // Set up request url
     var url = this.baseUrl + "apis/";
+
+    return this.getResponseObject(url);
+  },
+  /*
+  Get a specific admin account given an ID
+  return the JSON response object
+  */
+  getAdmin: function (id) {
+    // Set up request url with ID
+    var url = this.baseUrl + "admins/" + id;
+
+    return this.getResponseObject(url);
+  },
+  /*
+  Get all admin users
+  return the JSON response object
+  */
+  getAdmins: function () {
+    // Set up request url
+    var url = this.baseUrl + "admins/";
 
     return this.getResponseObject(url);
   }
