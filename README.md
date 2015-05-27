@@ -25,8 +25,8 @@ Once you have added the package, you will need to extend the [Meteor.settings](h
 The `api_key` and `auth_token` values only need to be available on the server, and *should not be public*.
 
 ## Usage
-### apiUmbrella methods
-This package exports an object called `apiUmbrella`, that contains the following methods:
+### apiUmbrellaWeb methods
+This package exports an object called `apiUmbrellaWeb`, that contains the following methods:
 
 * getUser (id) - gets a specific user by ID
 * getUsers - gets all users
