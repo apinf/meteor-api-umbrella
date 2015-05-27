@@ -24,7 +24,7 @@ apiUmbrellaWeb = {
 
     // If successful, return the response object
     return response;
-  }
+  },
   /*
   Get a specific user from API Umbrella Admin API
   given a User ID
