@@ -26,7 +26,7 @@ The `api_key` and `auth_token` values only need to be available on the server, a
 
 ## Usage
 ### apiUmbrellaWeb methods
-This package exports an object called `apiUmbrellaWeb`, that contains the following methods:
+This package exports an object called `apiUmbrellaWeb` that contains the following methods:
 
 * getUser (id) - gets a specific user by ID
 * getUsers - gets all users
