@@ -15,8 +15,9 @@ Once you have added the package, you will need to extend the [Meteor.settings](h
 ```
 {
   "apiUmbrella": {
-    "api_key": "...",
-    "auth_token": "..."
+    "api_key": "...", // API key for administrative user
+    "auth_token": "..." // Authentication token for administrative user
+    "base_url": "..." // Base URL for Admin API (e.g. http://example.com/api-umbrella/v1/)
   }
 }
 ```
@@ -27,5 +28,7 @@ The `api_key` and `auth_token` values only need to be available on the server, a
 ### apiUmbrella methods
 This package exports an object called `apiUmbrella`, that contains the following methods:
 
-* getUser (userID) - gets a user by a given userId
+* getUser (id) - gets a specific user by ID
 * getUsers - gets all users
+* getApiBackend (id) - gets a specific API backend by ID
+* getApiBackends - gets all API backends
