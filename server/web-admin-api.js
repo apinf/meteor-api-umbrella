@@ -3,22 +3,24 @@ Define an object to interact with API Umbrella Admin API
 Documentation site: http://apiumbrella.io/docs/admin-api/
 */
 apiUmbrellaWeb = {
-  "baseUrl": Meteor.settings.apiUmbrella.base_url,
+  "baseUrl": Meteor.settings.api_umbrella.base_url,
   "requestHeaders": {
-    "X-Api-Key": Meteor.settings.apiUmbrella.api_key,
-    "X-Admin-Auth-Token": Meteor.settings.apiUmbrella.auth_token,
+    "X-Api-Key": Meteor.settings.api_umbrella.api_key,
+    "X-Admin-Auth-Token": Meteor.settings.api_umbrella.auth_token,
   },
+  /*
+  Get a specific user from API Umbrella Admin API
+  given a User ID
+  return the JSON user object or error
+  */
   getUser: function (userId) {
-    /*
-    Get a specific user from API Umbrella Admin API
-    return the JSON user object or error
-    */
+    // Set up base url with user ID
+    var url = this.baseUrl + "users/" + userId;
+
+    // Try to get the user object from server
     try {
-      var response = HTTP.get(this.baseUrl, {
-        headers: this.requestHeaders,
-        params: {
-          "id": this.userId
-        }
+      var response = HTTP.get(url, {
+        headers: this.requestHeaders
       });
     } catch (error) {
       return error;
@@ -27,14 +29,18 @@ apiUmbrellaWeb = {
     // If successful, return the response object
     return response;
   },
+  /*
+  Get all users from API Umbrella Admin API
+  return the JSON user object or error
+  */
   getUsers: function () {
-    /*
-    Get all users from API Umbrella Admin API
-    return the JSON user object or error
-    */
+    // Set up base url for users
+    var url = this.baseUrl + "users/";
+
+    // Try to get all users from server
     try {
-      var response = HTTP.get(baseUrl, {
-        headers: requestHeaders,
+      var response = HTTP.get(url, {
+        headers: this.requestHeaders,
       });
     } catch (error) {
       return error;
