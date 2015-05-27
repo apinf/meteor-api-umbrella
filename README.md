@@ -1,6 +1,7 @@
 # brylie:api-umbrella
+[API Umbrella](http://apiumbrella.io) is a proxy that sits in front of your APIs. It can seamlessly add common functionality like api keys, rate limiting, and analytics to any API. The API Umbrella platform has a REST API for managing users, API Endpoints, etc.
 
-Wrapper for [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
+This package provides helper methods to interact with the [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
 
 ## Installation
 
@@ -8,8 +9,9 @@ Wrapper for [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
 meteor add brylie:api-umbrella
 ```
 
-## Description
-[API Umbrella](http://apiumbrella.io) is a proxy that sits in front of your APIs.
-It can seamlessly add common functionality like api keys, rate limiting, and analytics to any API. The API Umbrella platform has a REST API for managing users, API Endpoints, etc.
+## Usage
+### apiUmbrella methods
+This package exports an object called `apiUmbrella`, that contains the following methods:
 
-This package provides helper methods to interact with the API Umbrella Admin API.
+* getUser (userID) - gets a user by a given userId
+* getUsers - gets all users
