@@ -14,10 +14,10 @@ apiUmbrellaWeb = {
     return the JSON user object or error
     */
     try {
-      var response = HTTP.get(baseUrl, {
-        headers: requestHeaders,
+      var response = HTTP.get(this.baseUrl, {
+        headers: this.requestHeaders,
         params: {
-          "id": userId
+          "id": this.userId
         }
       });
     } catch (error) {
