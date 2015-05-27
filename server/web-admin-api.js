@@ -7,7 +7,8 @@ apiUmbrellaWeb = {
   "requestHeaders": {
     "X-Api-Key": Meteor.settings.api_umbrella.api_key,
     "X-Admin-Auth-Token": Meteor.settings.api_umbrella.auth_token,
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "Accept": "application/json"
   },
   /*
   Get a response object from server
