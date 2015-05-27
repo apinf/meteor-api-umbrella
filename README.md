@@ -4,10 +4,24 @@
 This package provides helper methods to interact with the [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
 
 ## Installation
-
+Install the package in your project with the following command:
 ```
 meteor add brylie:api-umbrella
 ```
+
+## Configuration
+Once you have added the package, you will need to extend the [Meteor.settings](http://docs.meteor.com/#/full/meteor_settings) object with the following:
+
+```
+{
+  "apiUmbrella": {
+    "api_key": "...",
+    "auth_token": "..."
+  }
+}
+```
+
+The `api_key` and `auth_token` values only need to be available on the server, and *should not be public*.
 
 ## Usage
 ### apiUmbrella methods
