@@ -34,3 +34,16 @@ This package exports an object called `apiUmbrellaWeb` that contains the followi
 * getApiBackends - gets all API backends
 * getAdmin (id) - get specific admin user by ID
 * getAdmins - get all admin users
+
+## Testing
+In order to test this package, make sure you have met the following set-up conditions:
+
+1. a working API Umbrella instance
+2. a valid config file (e.g. settings.json)
+3. a testing project with this package sourcecode downloaded (e.g. in the /packages directory)
+
+Then, run the following command in your project directory:
+
+```
+meteor --settings settings.json test-packages packages/api-umbrella/
+```
