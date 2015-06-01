@@ -38,6 +38,26 @@ apiUmbrellaWeb = {
     return this.getResponseObject(url);
   },
   /*
+  Create a new API Umbrella user
+  given a user object
+  return the response object
+  */
+  createUser: function (userObject) {
+    // Create the URL
+    var url = this.baseUrl + "users/";
+
+    // Create the options object
+    var options = {
+      headers: this.requestHeaders,
+      data: userObject
+    };
+
+    // Make POST request to create new user
+    var response = HTTP.post(url, options);
+
+    return response;
+  },
+  /*
   Get all users
   return the JSON response object
   */
