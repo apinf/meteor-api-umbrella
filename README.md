@@ -17,7 +17,7 @@ Once you have added the package, you will need to extend the [Meteor.settings](h
   "apiUmbrella": {
     "api_key": "...", // API key for administrative user
     "auth_token": "..." // Authentication token for administrative user
-    "base_url": "..." // Base URL for Admin API (e.g. http://example.com/api-umbrella/v1/)
+    "base_url": "" // Base URL for Admin API (without version). E.g. http://api.com/api-umbrella/
   }
 }
 ```
