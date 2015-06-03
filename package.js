@@ -7,7 +7,7 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom("1.0.1");
-  api.use(["meteor", "http"]);
+  api.use(["meteor", "http", "underscore"]);
 
   api.addFiles("server/web-admin-api.js", ["server"]);
 
