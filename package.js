@@ -23,6 +23,9 @@ Package.onTest(function (api) {
   api.use(["tinytest", "underscore"]);
   api.use("brylie:api-umbrella");
 
-  api.addFiles("tests/server/web-admin-api.js", ["server"]);
+  api.addFiles("tests/server/configuration-tests.js", ["server"]);
+  api.addFiles("tests/server/admin-api/v1/adminUsers.js", ["server"]);
+  api.addFiles("tests/server/admin-api/v1/apiUsers.js", ["server"]);
+  api.addFiles("tests/server/admin-api/v1/apiBackends.js", ["server"]);
   api.export("apiUmbrellaWeb", ["server"]);
 });
