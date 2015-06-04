@@ -4,5 +4,5 @@ with an adminApi object
 */
 apiUmbrellaWeb = _.extend(
   apiUmbrellaWeb,
-  { adminApi: new Object() }
+  { "adminApi": {} }
 );
