@@ -9,7 +9,12 @@ Package.onUse(function(api) {
   api.versionsFrom("1.0.1");
   api.use(["meteor", "http", "underscore"]);
 
-  api.addFiles("server/web-admin-api.js", ["server"]);
+  api.addFiles("server/apiUmbrellaWeb.js", ["server"]);
+  api.addFiles("server/admin-api/adminApi.js", ["server"]);
+  api.addFiles("server/admin-api/v1/v1.js", ["server"]);
+  api.addFiles("server/admin-api/v1/apiUsers.js", ["server"]);
+  api.addFiles("server/admin-api/v1/adminUsers.js", ["server"]);
+  api.addFiles("server/admin-api/v1/apiBackends.js", ["server"]);
 
   api.export("apiUmbrellaWeb", ["server"]);
 });
