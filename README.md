@@ -25,25 +25,40 @@ Once you have added the package, you will need to extend the [Meteor.settings](h
 **Note:** The `api_key` and `auth_token` values only need to be available on the server, and *should not be public*.
 
 ##Start Meteor
-Once you have created a Meteor.settings file (following the documentation, if needed), run your project with the `--settings` flag followed by your config file (e.g. `settings.json`):
+Once you have created a Meteor.settings file (following the [Meteor.settings documentation](http://docs.meteor.com/#/full/meteor_settings), if needed), run your project with the `--settings` flag followed by your config file (e.g. `settings.json`):
 
 ```
 meteor --settings settings.json
 ```
 
 ## Usage
-This package exports an object called `apiUmbrellaWeb`. `apiUmbrellaWeb` has a sub-object called `adminApi` that contains a `v1` object. This structure conforms with the basic organization of the API Umbrella Web project, and allows the package to mirror the versioning of the API Umbrella Admin API.
+### Structure
+This package exports an object called `apiUmbrellaWeb`. `apiUmbrellaWeb` has the following structure:
+
+* apiUmbrellaWeb
+  * adminApi
+    * v1
+      * getUser
+      * getUsers
+      * createUser
+      * getApiBackend
+      * getApiBackends
+      * getAdmin
+      * getAdmins
+
+This structure conforms with the basic organization of the [API Umbrella Web](https://github.com/NREL/api-umbrella-web) project, and allows the package to mirror the versioning of the [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
 
 ### apiUmbrellaWeb.adminApi.v1 methods
 * getUser (id) - gets a specific user by ID
+* createUser (object) - create a new user given a user object
 * getUsers - gets all users
 * getApiBackend (id) - gets a specific API backend by ID
 * getApiBackends - gets all API backends
 * getAdmin (id) - get specific admin user by ID
 * getAdmins - get all admin users
 
-## Testing
-In order to test this package, make sure you have met the following set-up conditions:
+## Unit Testing
+In order to run unit tests on this package, make sure you have met the following set-up conditions:
 
 1. a working API Umbrella instance
 2. a valid config file (e.g. settings.json)
