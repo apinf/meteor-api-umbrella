@@ -35,20 +35,19 @@ meteor --settings settings.json
 ### Structure
 This package exports an object called `apiUmbrellaWeb`. `apiUmbrellaWeb` has the following structure:
 
-* apiUmbrellaWeb
-  * adminApi
-    * v1
-      * getUser
-      * getUsers
-      * createUser
-      * getApiBackend
-      * getApiBackends
-      * getAdmin
-      * getAdmins
+* adminApi
+  * v1
+    * getUser
+    * getUsers
+    * createUser
+    * getApiBackend
+    * getApiBackends
+    * getAdmin
+    * getAdmins
 
 This structure conforms with the basic organization of the [API Umbrella Web](https://github.com/NREL/api-umbrella-web) project, and allows the package to mirror the versioning of the [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
 
-### apiUmbrellaWeb.adminApi.v1 methods
+### Methods
 * getUser (id) - gets a specific user by ID
 * createUser (object) - create a new user given a user object
 * getUsers - gets all users
