@@ -10,11 +10,11 @@ meteor add brylie:api-umbrella
 ```
 
 ## Configuration
-Once you have added the package, you will need to extend the [Meteor.settings](http://docs.meteor.com/#/full/meteor_settings) object with the following:
+Once you have added the package, you will need to extend the [Meteor.settings](http://docs.meteor.com/#/full/meteor_settings) object with the following (e.g. in `settings.json`):
 
 ```
 {
-  "apiUmbrella": {
+  "api_umbrella": {
     "api_key": "...", // API key for administrative user
     "auth_token": "..." // Authentication token for administrative user
     "base_url": "" // Base URL for Admin API (without version). E.g. http://api.com/api-umbrella/
@@ -22,7 +22,14 @@ Once you have added the package, you will need to extend the [Meteor.settings](h
 }
 ```
 
-The `api_key` and `auth_token` values only need to be available on the server, and *should not be public*.
+**Note:** The `api_key` and `auth_token` values only need to be available on the server, and *should not be public*.
+
+##Start Meteor
+Once you have created a Meteor.settings file (following the documentation, if needed), run your project with the `--settings` flag followed by your config file (e.g. `settings.json`):
+
+```
+meteor --settings settings.json
+```
 
 ## Usage
 This package exports an object called `apiUmbrellaWeb`. `apiUmbrellaWeb` has a sub-object called `adminApi` that contains a `v1` object. This structure conforms with the basic organization of the API Umbrella Web project, and allows the package to mirror the versioning of the API Umbrella Admin API.
