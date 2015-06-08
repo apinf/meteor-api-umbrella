@@ -3,13 +3,13 @@
 
 This package provides helper methods to interact with the [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
 
-## Installation
+# Installation
 Install the package in your project with the following command:
 ```
 meteor add brylie:api-umbrella
 ```
 
-## Configuration
+# Configuration
 Once you have added the package, you will need to extend the [Meteor.settings](http://docs.meteor.com/#/full/meteor_settings) object with the following (e.g. in `settings.json`):
 
 ```
@@ -24,15 +24,15 @@ Once you have added the package, you will need to extend the [Meteor.settings](h
 
 **Note:** The `api_key` and `auth_token` values only need to be available on the server, and *should not be public*.
 
-##Start Meteor
+#Start Meteor
 Once you have created a Meteor.settings file (following the [Meteor.settings documentation](http://docs.meteor.com/#/full/meteor_settings), if needed), run your project with the `--settings` flag followed by your config file (e.g. `settings.json`):
 
 ```
 meteor --settings settings.json
 ```
 
-## Usage
-### Structure
+# Usage
+## Structure
 This package exports an object called `apiUmbrellaWeb`. `apiUmbrellaWeb` has the following structure:
 
 * adminApi
@@ -47,7 +47,7 @@ This package exports an object called `apiUmbrellaWeb`. `apiUmbrellaWeb` has the
 
 This structure conforms with the basic organization of the [API Umbrella Web](https://github.com/NREL/api-umbrella-web) project, and allows the package to mirror the versioning of the [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
 
-### Methods
+## Methods
 * getUser (id) - gets a specific user by ID
 * createUser (object) - create a new user given a user object
 * getUsers - gets all users
@@ -56,7 +56,7 @@ This structure conforms with the basic organization of the [API Umbrella Web](ht
 * getAdmin (id) - get specific admin user by ID
 * getAdmins - get all admin users
 
-## Unit Testing
+# Unit Testing
 In order to run unit tests on this package, make sure you have met the following set-up conditions:
 
 1. a working API Umbrella instance
