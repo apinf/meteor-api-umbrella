@@ -37,15 +37,18 @@ This package exports an object called `apiUmbrellaWeb`. `apiUmbrellaWeb` has the
 
 * adminApi
   * v1
-    * getUser
-    * getUsers
-    * createUser
-    * getApiBackend
-    * getApiBackends
-    * createApiBackend
-    * getAdmin
-    * getAdmins
-    * createAdmin
+    * apiUsers
+      * getUser
+      * getUsers
+      * createUser
+    * apiBackends
+      * getApiBackend
+      * getApiBackends
+      * createApiBackend
+    * adminUsers
+      * getAdmin
+      * getAdmins
+      * createAdmin
 
 This structure conforms with the basic organization of the [API Umbrella Web](https://github.com/NREL/api-umbrella-web) project, and allows the package to mirror the versioning of the [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
 
