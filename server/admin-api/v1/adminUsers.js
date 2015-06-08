@@ -13,6 +13,26 @@ var adminUsers = {
     return this.getResponseObject(url);
   },
   /*
+  Create a new Admin user
+  given a user object
+  return the response object
+  */
+  createAdmin: function (userObject) {
+    // Create the URL
+    var url = apiUmbrellaWeb.baseUrl + "v1/admins/";
+
+    // Create the options object
+    var options = {
+      headers: apiUmbrellaWeb.requestHeaders,
+      data: userObject
+    };
+
+    // Make POST request to create new user
+    var response = HTTP.post(url, options);
+
+    return response;
+  }
+  /*
   Get all admin users
   return the JSON response object
   */
