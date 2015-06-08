@@ -42,19 +42,29 @@ This package exports an object called `apiUmbrellaWeb`. `apiUmbrellaWeb` has the
     * createUser
     * getApiBackend
     * getApiBackends
+    * createApiBackend
     * getAdmin
     * getAdmins
+    * createAdmin
 
 This structure conforms with the basic organization of the [API Umbrella Web](https://github.com/NREL/api-umbrella-web) project, and allows the package to mirror the versioning of the [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/).
 
 ## Methods
+
+### API Users
 * getUser (id) - gets a specific user by ID
 * createUser (object) - create a new user given a user object
 * getUsers - gets all users
+
+### API Backends
 * getApiBackend (id) - gets a specific API backend by ID
 * getApiBackends - gets all API backends
+* createApiBackend (object) - create a new API Backend given an API Backend object
+
+### Admin Users
 * getAdmin (id) - get specific admin user by ID
 * getAdmins - get all admin users
+* createAdmin (object) - create a new Admin user given a user object
 
 # Unit Testing
 In order to run unit tests on this package, make sure you have met the following set-up conditions:
