@@ -31,7 +31,7 @@ var adminUsers = {
     var response = HTTP.post(url, options);
 
     return response;
-  }
+  },
   /*
   Get all admin users
   return the JSON response object
