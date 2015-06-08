@@ -13,6 +13,26 @@ var apiBackends = {
     return this.getResponseObject(url);
   },
   /*
+  Create a new API Backend
+  given a backend object
+  return the response object
+  */
+  createApiBackend: function (backendObject) {
+    // Create the URL
+    var url = apiUmbrellaWeb.baseUrl + "v1/apis/";
+
+    // Create the options object
+    var options = {
+      headers: apiUmbrellaWeb.requestHeaders,
+      data: backendObject
+    };
+
+    // Make POST request to create new user
+    var response = HTTP.post(url, options);
+
+    return response;
+  },
+  /*
   Get all API backends
   return the JSON response object
   */
