@@ -8,9 +8,9 @@ var apiBackends = {
   */
   getApiBackend: function (id) {
     // Set up request url with ID
-    var url = this.baseUrl + "v1/apis/" + id;
+    var url = apiUmbrellaWeb.baseUrl + "v1/apis/" + id;
 
-    return this.getResponseObject(url);
+    return apiUmbrellaWeb.getResponseObject(url);
   },
   /*
   Create a new API Backend
@@ -38,9 +38,9 @@ var apiBackends = {
   */
   getApiBackends: function () {
     // Set up request url
-    var url = this.baseUrl + "v1/apis/";
+    var url = apiUmbrellaWeb.baseUrl + "v1/apis/";
 
-    return this.getResponseObject(url);
+    return apiUmbrellaWeb.getResponseObject(url);
   }
 };
 
