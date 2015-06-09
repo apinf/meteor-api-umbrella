@@ -14,7 +14,10 @@ Tinytest.add(
 Tinytest.add(
   "Admin API v1 - Admin Users - getAdmins",
   function (test) {
-    test.fail();
+    var response = apiUmbrellaWeb.adminApi.v1.adminUsers.getAdmins();
+    if (response.statusCode !== 200) {
+      test.fail();
+    }
   },
   "Could not get individual user."
 );
