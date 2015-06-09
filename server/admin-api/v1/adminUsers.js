@@ -8,9 +8,9 @@ var adminUsers = {
   */
   getAdmin: function (id) {
     // Set up request url with ID
-    var url = this.baseUrl + "v1/admins/" + id;
+    var url = apiUmbrellaWeb.baseUrl + "v1/admins/" + id;
 
-    return this.getResponseObject(url);
+    return apiUmbrellaWeb.getResponseObject(url);
   },
   /*
   Create a new Admin user
@@ -38,9 +38,9 @@ var adminUsers = {
   */
   getAdmins: function () {
     // Set up request url
-    var url = this.baseUrl + "v1/admins/";
+    var url = apiUmbrellaWeb.baseUrl + "v1/admins/";
 
-    return this.getResponseObject(url);
+    return apiUmbrellaWeb.getResponseObject(url);
   }
 };
 
