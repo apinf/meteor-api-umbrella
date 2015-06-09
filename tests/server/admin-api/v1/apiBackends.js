@@ -1,15 +1,15 @@
 /*
 Tests for the API Backends v1 wrapper.
 */
-Tinytest.add(
-  "Admin API v1 - API Backends - getBackend",
-  function (test) {
-    //var response = apiUmbrellaWeb.adminApi.v1.apiUsers.getUsers();
-    //console.log(response.statusCode);
-    test.fail();
-  },
-  "Could not get all API Backends."
-);
+// Tinytest.add(
+//   "Admin API v1 - API Backends - getBackend",
+//   function (test) {
+//     //var response = apiUmbrellaWeb.adminApi.v1.apiUsers.getUsers();
+//     //console.log(response.statusCode);
+//     test.fail();
+//   },
+//   "Could not get all API Backends."
+// );
 
 Tinytest.add(
   "Admin API v1 - API Backends - getBackends",
