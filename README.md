@@ -91,3 +91,5 @@ Then, run the following command in your project directory:
 ```
 meteor --settings settings.json test-packages packages/api-umbrella/
 ```
+
+**Note:** As this package is a thin wrapper around the *API Umbrella Admin API*, the unit tests are also relatively simple. Please file an issue or support request, if you have an alternative test strategy or need other help with testing.
