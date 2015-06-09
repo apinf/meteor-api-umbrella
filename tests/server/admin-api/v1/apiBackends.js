@@ -14,7 +14,10 @@ Tinytest.add(
 Tinytest.add(
   "Admin API v1 - API Backends - getBackends",
   function (test) {
-    test.fail();
+    var response = apiUmbrellaWeb.adminApi.v1.apiBackends.getApiBackends();
+    if (response.statusCode !== 200) {
+      test.fail();
+    }
   },
   "Could not get individual API Backend."
 );
