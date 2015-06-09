@@ -34,7 +34,7 @@ The Meteor settings object should contain a sub-object called `api_umbrella`. Wi
 
 You can obtain the *Authentication Token* and *API Key* from the API Umbrella platform by following instructions in the [Getting Started](http://apiumbrella.io/docs/getting-started/) and [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/) documentation.
 
-#Start Meteor
+# Start Meteor
 Once you have created a Meteor.settings file (following the [Meteor.settings documentation](http://docs.meteor.com/#/full/meteor_settings), if needed), run your project with the `--settings` flag followed by your config file (e.g. `settings.json`):
 
 ```
