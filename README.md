@@ -10,19 +10,29 @@ meteor add brylie:api-umbrella
 ```
 
 # Configuration
-Once you have added the package, you will need to extend the [Meteor.settings](http://docs.meteor.com/#/full/meteor_settings) object with the following (e.g. in `settings.json`):
+Once you have added the package, you will need to extend the [Meteor.settings](http://docs.meteor.com/#/full/meteor_settings) object with the following (e.g. in `settings.json` in your project root directory):
 
 ```
 {
   "api_umbrella": {
-    "api_key": "...", // API key for administrative user
-    "auth_token": "..." // Authentication token for administrative user
-    "base_url": "" // Base URL for Admin API (without version). E.g. http://api.com/api-umbrella/
+    "api_key": "...",
+    "auth_token": "..."
+    "base_url": "..."
   }
 }
 ```
+## Configuration values
+The Meteor settings object should contain a sub-object called `api_umbrella`. Within the `api_umbrella` object, define three properties:
+
+* `api_key` - API key for administrative user
+* `auth_token` - Authentication token for administrative user
+* `base_url` - Base URL for Admin API (without version number, and with trailing slash). E.g. http://example.com/api-umbrella/
 
 **Note:** The `api_key` and `auth_token` values only need to be available on the server, and *should not be public*.
+
+### Obtaining API Key and Authentication token
+
+You can obtain the *Authentication Token* and *API Key* from the API Umbrella platform by following instructions in the [Getting Started](http://apiumbrella.io/docs/getting-started/) and [API Umbrella Admin API](http://apiumbrella.io/docs/admin-api/) documentation.
 
 #Start Meteor
 Once you have created a Meteor.settings file (following the [Meteor.settings documentation](http://docs.meteor.com/#/full/meteor_settings), if needed), run your project with the `--settings` flag followed by your config file (e.g. `settings.json`):
