@@ -13,8 +13,10 @@ Tinytest.add(
   "Admin API v1 - API Users - getUsers",
   function (test) {
     var response = apiUmbrellaWeb.adminApi.v1.apiUsers.getUsers();
-    console.log(response.statusCode);
-    test.fail();
+    console.log(_.keys(response));
+    if (response.statusCode !== 200) {
+      test.fail();
+    }
   },
   "Could not get all users."
 );
