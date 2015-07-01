@@ -7,7 +7,8 @@ Package.describe({
 
 Package.onUse(function(api) {
   api.versionsFrom("1.0.1");
-  api.use(["meteor", "http", "underscore"]);
+  api.use(["http", "underscore"]);
+  api.imply(["http", "underscore"]);
 
   api.addFiles("server/apiUmbrellaWeb.js", ["server"]);
   api.addFiles("server/admin-api/adminApi.js", ["server"]);
