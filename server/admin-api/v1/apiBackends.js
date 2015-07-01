@@ -2,15 +2,22 @@
 API Backend functions
 */
 var apiBackends = {
+  urlPrefix: "v1/apis/",
+  options: {
+    headers: apiUmbrellaWeb.requestHeaders
+  },
   /*
   Get a specific API backend given an ID
   return the JSON response object
   */
   getApiBackend: function (id) {
     // Set up request url with ID
-    var url = apiUmbrellaWeb.baseUrl + "v1/apis/" + id;
+    var url = apiUmbrellaWeb.baseUrl + this.urlPrefix + id;
 
-    return apiUmbrellaWeb.getResponseObject(url);
+    // Make GET request to API Umbrella
+    var response = HTTP.get(url, this.options);
+
+    return response;
   },
   /*
   Create a new API Backend
@@ -19,16 +26,16 @@ var apiBackends = {
   */
   createApiBackend: function (backendObject) {
     // Create the URL
-    var url = apiUmbrellaWeb.baseUrl + "v1/apis/";
+    var url = apiUmbrellaWeb.baseUrl + this.urlPrefix;
 
-    // Create the options object
-    var options = {
-      headers: apiUmbrellaWeb.requestHeaders,
-      data: backendObject
-    };
+    // Create temporary options object
+    var localOptions = this.options;
+
+    // Extend the Options object with the User object
+    localOptions.data = userObject;
 
     // Make POST request to create new user
-    var response = HTTP.post(url, options);
+    var response = HTTP.post(url, localOptions);
 
     return response;
   },
@@ -38,9 +45,12 @@ var apiBackends = {
   */
   getApiBackends: function () {
     // Set up request url
-    var url = apiUmbrellaWeb.baseUrl + "v1/apis/";
+    var url = apiUmbrellaWeb.baseUrl + this.urlPrefix;
 
-    return apiUmbrellaWeb.getResponseObject(url);
+    // Make GET request to API Umbrella
+    var response = HTTP.get(url, this.options);
+
+    return response;
   }
 };
 
