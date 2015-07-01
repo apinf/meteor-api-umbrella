@@ -13,22 +13,5 @@ apiUmbrellaWeb = {
     "X-Admin-Auth-Token": Meteor.settings.api_umbrella.auth_token,
     "Content-Type": "application/json",
     "Accept": "application/json"
-  },
-  /*
-  Get a response object from server
-  given a request URL
-  return response object
-  */
-  getResponseObject: function (url) {
-    try {
-      var response = HTTP.get(url, {
-        headers: this.requestHeaders
-      });
-    } catch (error) {
-      return error;
-    }
-
-    // If successful, return the response object
-    return response;
   }
 };
