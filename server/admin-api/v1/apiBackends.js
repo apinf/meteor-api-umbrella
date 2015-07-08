@@ -31,8 +31,8 @@ var apiBackends = {
     // Create temporary options object
     var localOptions = this.options;
 
-    // Extend the Options object with the User object
-    localOptions.data = userObject;
+    // Extend the Options object with the Backend object
+    localOptions.data = backendObject;
 
     // Make POST request to create new user
     var response = HTTP.post(url, localOptions);
