@@ -1,5 +1,7 @@
 /*
 API Backend functions
+Initial options are constructed from the parent API Umbrella Web object
+URL prefix is hard coded based on API Umbrella URL structure
 */
 var apiBackends = {
   urlPrefix: "v1/apis/",
