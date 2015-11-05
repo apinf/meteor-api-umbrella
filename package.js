@@ -1,7 +1,7 @@
 Package.describe({
   name: "brylie:api-umbrella",
   summary: "Wrapper for API Umbrella Admin API.",
-  version: "0.2.12",
+  version: "0.3.0",
   git: "https://github.com/brylie/meteor-api-umbrella"
 });
 
@@ -17,7 +17,7 @@ Package.onUse(function(api) {
   api.addFiles("server/admin-api/v1/adminUsers.js", ["server"]);
   api.addFiles("server/admin-api/v1/apiBackends.js", ["server"]);
 
-  api.export("apiUmbrellaWeb", ["server"]);
+  api.export("ApiUmbrellaWeb", ["server"]);
 });
 
 Package.onTest(function (api) {

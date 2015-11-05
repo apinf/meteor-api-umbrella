@@ -1,8 +1,10 @@
 /*
-Extend Admin API object
-with v1 object
+Extend ApiUmbrellaWeb.adminApi with v1 object
 */
-apiUmbrellaWeb.adminApi = _.extend(
-  apiUmbrellaWeb.adminApi,
-  { v1: {} }
-);
+ApiUmbrellaWeb.prototype.adminApi.v1 = {
+  urlPrefixes: {
+    "admins": "v1/admins/",
+    "apis": "v1/apis/",
+    "users": "v1/users/"
+  }
+};

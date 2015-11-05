@@ -1,8 +1,4 @@
 /*
-Extend the apiUmbrellaWeb object
-with an adminApi object
+Extend ApiUmbrellaWeb prototype with an empty adminApi object
 */
-apiUmbrellaWeb = _.extend(
-  apiUmbrellaWeb,
-  { "adminApi": {} }
-);
+ApiUmbrellaWeb.prototype.adminApi = {};

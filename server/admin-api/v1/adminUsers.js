@@ -1,21 +1,21 @@
 /*
-API Admin User functions
+Extend Admin API V1 object
+with admin users object
 */
-var adminUsers = {
-  urlPrefix: "v1/admins/",
-  options: {
-    headers: apiUmbrellaWeb.requestHeaders
-  },
+ApiUmbrellaWeb.prototype.adminApi.v1.adminUsers = {
   /*
   Get a specific admin account given an ID
   return the JSON response object
   */
   getAdmin: function (id) {
+    // Set up the urlPrefix
+    var urlPrefix = ApiUmbrellaWeb.adminApi.v1.urlPrefixes.admins;
+
     // Set up request url with ID
     var url = apiUmbrellaWeb.baseUrl + this.urlPrefix + id;
 
     // Make GET request to API Umbrella
-    var response = HTTP.get(url, this.options);
+    var response = HTTP.get(url, {headers: this.headers});
 
     return response;
   },
@@ -25,11 +25,14 @@ var adminUsers = {
   return the response object
   */
   createAdmin: function (userObject) {
+    // Set up the urlPrefix
+    var urlPrefix = ApiUmbrellaWeb.adminApi.v1.urlPrefixes.admins;
+
     // Create the URL
     var url = apiUmbrellaWeb.baseUrl + this.urlPrefix;
 
     // Create the options object
-    var localOptions = this.options;
+    var localOptions = {headers: this.headers};
 
     // Extend the Options object with the User object
     localOptions.data = userObject;
@@ -44,21 +47,15 @@ var adminUsers = {
   return the JSON response object
   */
   getAdmins: function () {
+    // Set up the urlPrefix
+    var urlPrefix = ApiUmbrellaWeb.adminApi.v1.urlPrefixes.admins;
+
     // Set up request url
     var url = apiUmbrellaWeb.baseUrl + this.urlPrefix;
 
     // Make GET request to API Umbrella
-    var response = HTTP.get(url, this.options);
+    var response = HTTP.get(url, {headers: this.headers});
 
     return response;
   }
 };
-
-/*
-Extend Admin API V1 object
-with admin users object
-*/
-apiUmbrellaWeb.adminApi.v1 = _.extend(
-  apiUmbrellaWeb.adminApi.v1,
-  { adminUsers: adminUsers }
-);

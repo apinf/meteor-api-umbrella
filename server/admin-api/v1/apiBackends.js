@@ -1,23 +1,21 @@
 /*
-API Backend functions
-Initial options are constructed from the parent API Umbrella Web object
-URL prefix is hard coded based on API Umbrella URL structure
+Extend Admin API - V1
+with apiBackends object
 */
-var apiBackends = {
-  urlPrefix: "v1/apis/",
-  options: {
-    headers: apiUmbrellaWeb.requestHeaders
-  },
+ApiUmbrellaWeb.prototype.adminApi.v1.apiBackends = {
   /*
   Get a specific API backend given an ID
   return the JSON response object
   */
   getApiBackend: function (id) {
+    // Set up the urlPrefix
+    var urlPrefix = ApiUmbrellaWeb.adminApi.v1.urlPrefixes.apis;
+
     // Set up request url with ID
     var url = apiUmbrellaWeb.baseUrl + this.urlPrefix + id;
 
     // Make GET request to API Umbrella
-    var response = HTTP.get(url, this.options);
+    var response = HTTP.get(url, {headers: this.headers});
 
     return response;
   },
@@ -27,11 +25,14 @@ var apiBackends = {
   return the response object
   */
   createApiBackend: function (backendObject) {
+    // Set up the urlPrefix
+    var urlPrefix = ApiUmbrellaWeb.adminApi.v1.urlPrefixes.apis;
+
     // Create the URL
     var url = apiUmbrellaWeb.baseUrl + this.urlPrefix;
 
     // Create temporary options object
-    var localOptions = this.options;
+    var localOptions = {headers: this.headers};
 
     // Extend the Options object with the Backend object
     localOptions.data = backendObject;
@@ -46,21 +47,15 @@ var apiBackends = {
   return the JSON response object
   */
   getApiBackends: function () {
+    // Set up the urlPrefix
+    var urlPrefix = ApiUmbrellaWeb.adminApi.v1.urlPrefixes.apis;
+
     // Set up request url
     var url = apiUmbrellaWeb.baseUrl + this.urlPrefix;
 
     // Make GET request to API Umbrella
-    var response = HTTP.get(url, this.options);
+    var response = HTTP.get(url, {headers: this.headers});
 
     return response;
   }
 };
-
-/*
-Extend Admin API - V1
-with apiBackends object
-*/
-apiUmbrellaWeb.adminApi.v1 = _.extend(
-  apiUmbrellaWeb.adminApi.v1,
-  { apiBackends: apiBackends }
-);
