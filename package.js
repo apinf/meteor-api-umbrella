@@ -11,11 +11,6 @@ Package.onUse(function(api) {
   api.imply(["http", "underscore"]);
 
   api.addFiles("server/apiUmbrellaWeb.js", ["server"]);
-  api.addFiles("server/admin-api/adminApi.js", ["server"]);
-  api.addFiles("server/admin-api/v1/v1.js", ["server"]);
-  api.addFiles("server/admin-api/v1/apiUsers.js", ["server"]);
-  api.addFiles("server/admin-api/v1/adminUsers.js", ["server"]);
-  api.addFiles("server/admin-api/v1/apiBackends.js", ["server"]);
 
   api.export("ApiUmbrellaWeb", ["server"]);
 });
