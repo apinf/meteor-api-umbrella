@@ -165,7 +165,7 @@ ApiUmbrellaWeb = function (config) {
   };
 
   /*
-  * Admin users
+  * API users
   * Version 1
   */
   this.adminApi.v1.apiUsers = {
