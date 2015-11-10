@@ -89,7 +89,6 @@ ApiUmbrellaWeb = function (config) {
     return the JSON response object
     */
     getApiBackends: function () {
-      console.log('hello world');
       // // Set up the urlPrefix
       var urlPrefix = self.adminApi.v1.urlPrefixes.apis;
 
