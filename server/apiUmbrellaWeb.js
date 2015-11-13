@@ -21,10 +21,10 @@ ApiUmbrellaWeb = function (config) {
 
   self.baseUrl = config.baseUrl;
   self.headers = {
-    "X-Api-Key": config.apiKey,
-    "X-Admin-Auth-Token": config.authToken,
+    "Accept": "application/json",
     "Content-Type": "application/json",
-    "Accept": "application/json"
+    "X-Admin-Auth-Token": config.authToken,
+    "X-Api-Key": config.apiKey,
   };
 
   // Admin API object, to hold versioned API facades
@@ -168,7 +168,7 @@ ApiUmbrellaWeb = function (config) {
   * API users
   * Version 1
   */
-  this.adminApi.v1.apiUsers = {
+  self.adminApi.v1.apiUsers = {
     /*
     Get a specific user given an ID
     return the JSON user object or error
@@ -225,5 +225,4 @@ ApiUmbrellaWeb = function (config) {
       return response;
     }
   };
-
 };
