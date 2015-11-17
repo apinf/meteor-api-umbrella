@@ -1,11 +1,22 @@
 /*
+Sample configuration for tests
+*/
+var config = {
+  "api_umbrella": {
+    "apiKey": "sample_api_key",
+    "authToken": "sample_auth_token",
+    "baseUrl": "https://api-umbrella.example.com",
+  },
+}
+
+/*
 Tests for the API Umbrella Admin API wrapper.
 ensuring configuration options are available
 */
 Tinytest.add(
-  "config - apiUmbrellaWeb",
+  "config - ApiUmbrellaWeb",
   function (test) {
-    if (!apiUmbrellaWeb) {
+    if (!ApiUmbrellaWeb) {
       test.fail();
       }
   },
@@ -13,56 +24,73 @@ Tinytest.add(
 );
 
 Tinytest.add(
-  "config - apiUmbrellaWeb.baseUrl",
+  "config - ApiUmbrellaWeb.baseUrl",
   function (test) {
+    var apiUmbrellaWeb = new ApiUmbrellaWeb(config);
     var keys = _.keys(apiUmbrellaWeb);
     var apiUmbrellaWebContainsKey = _.contains(keys, 'baseUrl');
     if (!apiUmbrellaWebContainsKey) {
-      test.fail("apiUmbrellaWeb does not contain 'baseUrl' key.");
+      test.fail("ApiUmbrellaWeb does not contain 'baseUrl' key.");
     }
   }
 );
 
 Tinytest.add(
-  "config - apiUmbrellaWeb.requestHeaders",
+  "config - ApiUmbrellaWeb.headers",
   function (test) {
+    var apiUmbrellaWeb = new ApiUmbrellaWeb(config);
     var keys = _.keys(apiUmbrellaWeb);
-    var apiUmbrellaWebContainsKey = _.contains(keys, 'requestHeaders');
-    if (!apiUmbrellaWebContainsKey) {
-      test.fail("apiUmbrellaWeb does not contain 'requestHeaders' key.");
+    var apiUmbrellaWebContainsHeadersKey = _.contains(keys, 'headers');
+    if (!apiUmbrellaWebContainsHeadersKey) {
+      test.fail("ApiUmbrellaWeb does not contain 'headers' key.");
     }
   }
 );
 
 Tinytest.add(
-  "config - apiUmbrellaWeb.requestHeaders.Accept",
+  "config - ApiUmbrellaWeb.headers.Accept",
   function (test) {
-    var keys = _.keys(apiUmbrellaWeb.requestHeaders);
-    var apiUmbrellaWebContainsKey = _.contains(keys, 'Accept');
-    if (!apiUmbrellaWebContainsKey) {
-      test.fail("apiUmbrellaWeb.requestHeaders does not contain 'Accept' key.");
+    var apiUmbrellaWeb = new ApiUmbrellaWeb(config);
+    var keys = _.keys(apiUmbrellaWeb.headers);
+    var apiUmbrellaWebHeadersContainsAcceptKey = _.contains(keys, 'Accept');
+    if (!apiUmbrellaWebHeadersContainsAcceptKey) {
+      test.fail("ApiUmbrellaWeb.headers does not contain 'Accept' key.");
     }
   }
 );
 
 Tinytest.add(
-  "config - apiUmbrellaWeb.requestHeaders.X-Api-Key",
+  "config - ApiUmbrellaWeb.headers.Content-Type",
   function (test) {
-    var keys = _.keys(apiUmbrellaWeb.requestHeaders);
-    var apiUmbrellaWebContainsKey = _.contains(keys, 'X-Api-Key');
-    if (!apiUmbrellaWebContainsKey) {
-      test.fail("apiUmbrellaWeb.requestHeaders does not contain 'X-Api-Key' key.");
+    var apiUmbrellaWeb = new ApiUmbrellaWeb(config);
+    var keys = _.keys(apiUmbrellaWeb.headers);
+    var apiUmbrellaWebHeadersContainsContentTypeKey = _.contains(keys, 'Content-Type');
+    if (!apiUmbrellaWebHeadersContainsContentTypeKey) {
+      test.fail("ApiUmbrellaWeb.headers does not contain 'Content-Type' key.");
     }
   }
 );
 
 Tinytest.add(
-  "config - apiUmbrellaWeb.requestHeaders.X-Admin-Auth-Token",
+  "config - ApiUmbrellaWeb.headers.X-Admin-Auth-Token",
   function (test) {
-    var keys = _.keys(apiUmbrellaWeb.requestHeaders);
-    var apiUmbrellaWebContainsKey = _.contains(keys, 'X-Admin-Auth-Token');
-    if (!apiUmbrellaWebContainsKey) {
-      test.fail("apiUmbrellaWeb.requestHeaders does not contain 'X-Admin-Auth-Token' key.");
+    var apiUmbrellaWeb = new ApiUmbrellaWeb(config);
+    var keys = _.keys(apiUmbrellaWeb.headers);
+    var apiUmbrellaWebHeadersContainsXAdminAuthTokenKey = _.contains(keys, 'X-Admin-Auth-Token');
+    if (!apiUmbrellaWebHeadersContainsXAdminAuthTokenKey) {
+      test.fail("ApiUmbrellaWeb.headers does not contain 'X-Admin-Auth-Token' key.");
+    }
+  }
+);
+
+Tinytest.add(
+  "config - ApiUmbrellaWeb.headers.X-Api-Key",
+  function (test) {
+    var apiUmbrellaWeb = new ApiUmbrellaWeb(config);
+    var keys = _.keys(apiUmbrellaWeb.headers);
+    var apiUmbrellaWebHeadersContainsXApiKeyKey = _.contains(keys, 'X-Api-Key');
+    if (!apiUmbrellaWebHeadersContainsXApiKeyKey) {
+      test.fail("ApiUmbrellaWeb.headers does not contain 'X-Api-Key' key.");
     }
   }
 );
