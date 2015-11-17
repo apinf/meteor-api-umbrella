@@ -14,7 +14,7 @@ Once you have added the package, you will need to extend the [Meteor.settings](h
 
 ```
 {
-  "api_umbrella": {
+  "apiUmbrella": {
     "apiKey": "...",
     "authToken": "...",
     "baseUrl": "..."
