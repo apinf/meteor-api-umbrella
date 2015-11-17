@@ -45,7 +45,7 @@ meteor --settings settings.json
 ## Structure
 This package exports an object called `ApiUmbrellaWeb`. You can create a new instance of `ApiUmbrellaWeb` as follows, where `config` contains:
 
-```
+```JavaScript
 var config = {
   apiKey: 'Meteor.settings.apiUmbrella.apiKey',
   authToken: 'Meteor.settings.apiUmbrella.authToken',
