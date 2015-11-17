@@ -56,7 +56,7 @@ var apiUmbrellaWeb = new ApiUmbrellaWeb(config);
 ```
 
 
-`ApiUmbrellaWeb` has the following structure:
+The `apiUmbrellaWeb` object has the following structure:
 
 * adminApi
   * v1
