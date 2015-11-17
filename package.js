@@ -1,7 +1,7 @@
 Package.describe({
   name: "brylie:api-umbrella",
   summary: "Wrapper for API Umbrella Admin API.",
-  version: "1.0.0",
+  version: "1.0.1",
   git: "https://github.com/brylie/meteor-api-umbrella"
 });
 
