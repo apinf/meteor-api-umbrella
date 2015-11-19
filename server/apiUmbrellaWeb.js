@@ -56,8 +56,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url with ID
       var url = self.baseUrl + urlPrefix + id;
 
-      // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
@@ -79,8 +84,13 @@ ApiUmbrellaWeb = function (config) {
       // Extend the Options object with the Backend object
       localOptions.data = backendObject;
 
-      // Make POST request to create new backend
-      var response = HTTP.post(url, localOptions);
+      try {
+        // Make POST request to create new backend
+        var response = HTTP.post(url, localOptions);
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
@@ -95,8 +105,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url
       var url = self.baseUrl + urlPrefix;
 
-      // // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     }
@@ -118,8 +133,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url with ID
       var url = self.baseUrl + urlPrefix + id;
 
-      // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
@@ -141,8 +161,13 @@ ApiUmbrellaWeb = function (config) {
       // Extend the Options object with the User object
       localOptions.data = userObject;
 
-      // Make POST request to create new user
-      var response = HTTP.post(url, localOptions);
+      try {
+        // Make POST request to create new user
+        var response = HTTP.post(url, localOptions);
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
@@ -157,8 +182,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url
       var url = self.baseUrl + urlPrefix;
 
-      // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     }
@@ -180,8 +210,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url with ID
       var url = self.baseUrl + urlPrefix + id;
 
-      // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
@@ -203,8 +238,13 @@ ApiUmbrellaWeb = function (config) {
       // Extend the Options object with the User object
       localOptions.data = userObject;
 
-      // Make POST request to create new user
-      var response = HTTP.post(url, localOptions);
+      try {
+        // Make POST request to create new user
+        var response = HTTP.post(url, localOptions);
+      }  catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
