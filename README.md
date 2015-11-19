@@ -14,7 +14,7 @@ Once you have added the package, you will need to extend the [Meteor.settings](h
 
 ```
 {
-  "api_umbrella": {
+  "apiUmbrella": {
     "apiKey": "...",
     "authToken": "...",
     "baseUrl": "..."
@@ -24,11 +24,11 @@ Once you have added the package, you will need to extend the [Meteor.settings](h
 ## Configuration values
 The Meteor settings object should contain a sub-object called `api_umbrella`. Within the `api_umbrella` object, define three properties:
 
-* `api_key` - API key for administrative user
-* `auth_token` - Authentication token for administrative user
-* `base_url` - Base URL for Admin API (without version number, and with trailing slash). E.g. http://example.com/api-umbrella/
+* `apiKey` - API key for administrative user
+* `authToken` - Authentication token for administrative user
+* `baseUrl` - Base URL for Admin API (without version number, and with trailing slash). E.g. http://example.com/api-umbrella/
 
-**Note:** The `api_key` and `auth_token` values only need to be available on the server, and *should not be public*.
+**Note:** The `apiKey` and `authToken` values only need to be available on the server, and *should not be public*.
 
 ### Obtaining API Key and Authentication token
 
@@ -43,7 +43,20 @@ meteor --settings settings.json
 
 # Usage
 ## Structure
-This package exports an object called `apiUmbrellaWeb`. `apiUmbrellaWeb` has the following structure:
+This package exports an object called `ApiUmbrellaWeb`. You can create a new instance of `ApiUmbrellaWeb` as follows, where `config` contains:
+
+```JavaScript
+var config = {
+  apiKey: 'Meteor.settings.apiUmbrella.apiKey',
+  authToken: 'Meteor.settings.apiUmbrella.authToken',
+  baseUrl: 'Meteor.settings.apiUmbrella.baseUrl'
+};
+
+var apiUmbrellaWeb = new ApiUmbrellaWeb(config);
+```
+
+
+The `apiUmbrellaWeb` object has the following structure:
 
 * adminApi
   * v1
