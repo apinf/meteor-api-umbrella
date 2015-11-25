@@ -36,6 +36,7 @@ ApiUmbrellaWeb = function (config) {
     urlPrefixes: {
       "admins": "v1/admins/",
       "apis": "v1/apis/",
+      "config": "v1/config/",
       "users": "v1/users/"
     }
   };
@@ -261,6 +262,39 @@ ApiUmbrellaWeb = function (config) {
 
       // Make GET request to API Umbrella
       var response = HTTP.get(url, {headers: self.headers});
+
+      return response;
+    }
+  };
+
+  /*
+  * System configuration, including API Backends
+  * Version 1
+  */
+  self.adminApi.v1.config = {
+
+    /*
+    Get all Config Changes
+    return the JSON response object
+    or throw an error
+    */
+    getPendingChanges: function () {
+      // Placeholder for response object
+      var response;
+
+      // // Set up the urlPrefix
+      var urlPrefix = self.adminApi.v1.urlPrefixes.config;
+
+      // Set up request url
+      var url = self.baseUrl + urlPrefix + "pending_changes";
+
+      try {
+        // Make GET request to API Umbrella
+        response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     }
