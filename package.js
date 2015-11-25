@@ -6,7 +6,7 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom("1.0.2");
+  api.versionsFrom("METEOR@1.0");
   api.use(["http", "underscore"]);
   api.imply(["http", "underscore"]);
 
