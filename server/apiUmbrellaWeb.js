@@ -358,7 +358,7 @@ ApiUmbrellaWeb = function (config) {
       localOptions.data = {
         "config": {
           "apis": {
-            apiBackendId: { "publish": 1 }
+            apiBackendId: { "publish": "1" }
           }
         }
       };
