@@ -337,6 +337,41 @@ ApiUmbrellaWeb = function (config) {
       }
 
       return response;
+    },
+    /*
+    Publish changes for a single API Backend by ID
+    */
+    publishSingleApiBackend: function (apiBackendId) {
+      // Placeholder for response object
+      var response;
+
+      // // Set up the urlPrefix
+      var urlPrefix = self.adminApi.v1.urlPrefixes.config;
+
+      // Set up request url
+      var url = self.baseUrl + urlPrefix + "publish";
+
+      // Create temporary options object
+      var localOptions = {headers: self.headers};
+
+      // Extend the Options object with the User object
+      localOptions.data = {
+        "config": {
+          "apis": {
+            apiBackendId: { "publish": 1 }
+          }
+        }
+      };
+
+      try {
+        // Make GET request to API Umbrella
+        response = HTTP.post(url, localOptions);
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
+
+      return response;
     }
   };
 };
