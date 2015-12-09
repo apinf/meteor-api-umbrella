@@ -357,11 +357,12 @@ ApiUmbrellaWeb = function (config) {
       // Extend the Options object with the User object
       localOptions.data = {
         "config": {
-          "apis": {
-            apiBackendId: { "publish": "1" }
-          }
+          "apis": {}
         }
       };
+
+      // Add API to config.apis object using bracket notation
+      localOptions.data.config.apis[apiBackendId] = {"publish": "1"};
 
       try {
         // Make GET request to API Umbrella
