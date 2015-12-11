@@ -260,8 +260,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url
       var url = self.baseUrl + urlPrefix;
 
-      // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     }
