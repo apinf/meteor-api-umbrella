@@ -96,16 +96,16 @@ ApiUmbrellaWeb = function (config) {
       return response;
     },
     /*
-    Create a new API Backend
-    given a backend object
+    Update an existing API Backend
+    given a backend object and ID
     return the response object
     */
-    updateApiBackend: function (backendObject) {
+    updateApiBackend: function (id, backendObject) {
       // Set up the urlPrefix
       var urlPrefix = self.adminApi.v1.urlPrefixes.apis;
 
       // Create the URL
-      var url = self.baseUrl + urlPrefix;
+      var url = self.baseUrl + urlPrefix + id;
 
       // Create temporary options object
       var localOptions = {headers: self.headers};
