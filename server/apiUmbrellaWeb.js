@@ -96,6 +96,34 @@ ApiUmbrellaWeb = function (config) {
       return response;
     },
     /*
+    Create a new API Backend
+    given a backend object
+    return the response object
+    */
+    updateApiBackend: function (backendObject) {
+      // Set up the urlPrefix
+      var urlPrefix = self.adminApi.v1.urlPrefixes.apis;
+
+      // Create the URL
+      var url = self.baseUrl + urlPrefix;
+
+      // Create temporary options object
+      var localOptions = {headers: self.headers};
+
+      // Extend the Options object with the Backend object
+      localOptions.data = backendObject;
+
+      try {
+        // Make POST request to create new backend
+        var response = HTTP.put(url, localOptions);
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
+
+      return response;
+    },
+    /*
     Get all API backends
     return the JSON response object
     */
