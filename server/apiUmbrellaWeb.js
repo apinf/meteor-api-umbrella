@@ -123,6 +123,31 @@ ApiUmbrellaWeb = function (config) {
 
       return response;
     },
+
+    /*
+    Delete an existing API Backend 
+    given an ID. Return the response
+    object
+    */
+
+    deleteApiBackend: function (apiBackendId) {
+      // Set up the urlPrefix
+      var urlPrefix = self.adminApi.v1.urlPrefixes.apis;
+
+      // Create the URL
+      var url = self.baseUrl + urlPrefix + apiBackendId;
+
+      try {
+        // Make DELETE request to delete backend
+        var response = HTTP.delete(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
+
+      return response;
+    },
+
     /*
     Get all API backends
     return the JSON response object
