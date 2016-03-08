@@ -130,12 +130,12 @@ ApiUmbrellaWeb = function (config) {
     object
     */
 
-    deleteApiBackend: function (id) {
+    deleteApiBackend: function (apiBackendId) {
       // Set up the urlPrefix
       var urlPrefix = self.adminApi.v1.urlPrefixes.apis;
 
       // Create the URL
-      var url = self.baseUrl + urlPrefix + id;
+      var url = self.baseUrl + urlPrefix + apiBackendId;
 
       try {
         // Make DELETE request to delete backend
