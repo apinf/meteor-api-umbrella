@@ -139,7 +139,7 @@ ApiUmbrellaWeb = function (config) {
 
       try {
         // Make DELETE request to delete backend
-        var response = HTTP.delete(url, {headers: self.headers});
+        var response = HTTP.del(url, {headers: self.headers});
       } catch (error) {
         // Enhance error with http_status and backend_errors properties
         throw new ApiUmbrellaError(error);
