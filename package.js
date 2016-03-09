@@ -18,7 +18,7 @@ Package.onUse(function(api) {
 
 Package.onTest(function (api) {
   api.use(["tinytest", "underscore"]);
-  api.use("brylie:api-umbrella");
+  api.use("apinf:api-umbrella");
 
   api.addFiles("tests/server/configuration-tests.js", ["server"]);
   api.addFiles("tests/server/admin-api/v1/adminUsers.js", ["server"]);
