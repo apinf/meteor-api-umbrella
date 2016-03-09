@@ -36,6 +36,7 @@ ApiUmbrellaWeb = function (config) {
     urlPrefixes: {
       "admins": "v1/admins/",
       "apis": "v1/apis/",
+      "config": "v1/config/",
       "users": "v1/users/"
     }
   };
@@ -56,8 +57,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url with ID
       var url = self.baseUrl + urlPrefix + id;
 
-      // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
@@ -79,11 +85,69 @@ ApiUmbrellaWeb = function (config) {
       // Extend the Options object with the Backend object
       localOptions.data = backendObject;
 
-      // Make POST request to create new backend
-      var response = HTTP.post(url, localOptions);
+      try {
+        // Make POST request to create new backend
+        var response = HTTP.post(url, localOptions);
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
+    /*
+    Update an existing API Backend
+    given a backend object and ID
+    return the response object
+    */
+    updateApiBackend: function (id, backendObject) {
+      // Set up the urlPrefix
+      var urlPrefix = self.adminApi.v1.urlPrefixes.apis;
+
+      // Create the URL
+      var url = self.baseUrl + urlPrefix + id;
+
+      // Create temporary options object
+      var localOptions = {headers: self.headers};
+
+      // Extend the Options object with the Backend object
+      localOptions.data = backendObject;
+
+      try {
+        // Make POST request to create new backend
+        var response = HTTP.put(url, localOptions);
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
+
+      return response;
+    },
+
+    /*
+    Delete an existing API Backend 
+    given an ID. Return the response
+    object
+    */
+
+    deleteApiBackend: function (apiBackendId) {
+      // Set up the urlPrefix
+      var urlPrefix = self.adminApi.v1.urlPrefixes.apis;
+
+      // Create the URL
+      var url = self.baseUrl + urlPrefix + apiBackendId;
+
+      try {
+        // Make DELETE request to delete backend
+        var response = HTTP.delete(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
+
+      return response;
+    },
+
     /*
     Get all API backends
     return the JSON response object
@@ -95,8 +159,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url
       var url = self.baseUrl + urlPrefix;
 
-      // // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     }
@@ -118,8 +187,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url with ID
       var url = self.baseUrl + urlPrefix + id;
 
-      // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
@@ -141,8 +215,13 @@ ApiUmbrellaWeb = function (config) {
       // Extend the Options object with the User object
       localOptions.data = userObject;
 
-      // Make POST request to create new user
-      var response = HTTP.post(url, localOptions);
+      try {
+        // Make POST request to create new user
+        var response = HTTP.post(url, localOptions);
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
@@ -157,8 +236,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url
       var url = self.baseUrl + urlPrefix;
 
-      // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     }
@@ -180,8 +264,13 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url with ID
       var url = self.baseUrl + urlPrefix + id;
 
-      // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
@@ -203,8 +292,13 @@ ApiUmbrellaWeb = function (config) {
       // Extend the Options object with the User object
       localOptions.data = userObject;
 
-      // Make POST request to create new user
-      var response = HTTP.post(url, localOptions);
+      try {
+        // Make POST request to create new user
+        var response = HTTP.post(url, localOptions);
+      }  catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     },
@@ -219,8 +313,122 @@ ApiUmbrellaWeb = function (config) {
       // Set up request url
       var url = self.baseUrl + urlPrefix;
 
-      // Make GET request to API Umbrella
-      var response = HTTP.get(url, {headers: self.headers});
+      try {
+        // Make GET request to API Umbrella
+        var response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
+
+      return response;
+    }
+  };
+
+  /*
+  * System configuration, including API Backends
+  * Version 1
+  */
+  self.adminApi.v1.config = {
+
+    /*
+    Get all Config Changes
+    return the JSON response object
+    or throw an error
+    */
+    getPendingChanges: function () {
+      // Placeholder for response object
+      var response;
+
+      // // Set up the urlPrefix
+      var urlPrefix = self.adminApi.v1.urlPrefixes.config;
+
+      // Set up request url
+      var url = self.baseUrl + urlPrefix + "pending_changes";
+
+      try {
+        // Make GET request to API Umbrella
+        response = HTTP.get(url, {headers: self.headers});
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
+
+      return response;
+    },
+    /*
+    Publish Config Changes
+    return the JSON response object
+    or throw an error
+    Expects publicationObject with the following structure
+    {
+      "config": {
+        "apis": {
+          "API_BACKEND_ID_HERE": { "publish": 1 },
+          "ADDITIONAL_API_BACKEND_ID_HERE": { "publish": 1 }
+        }
+      }
+    }
+    */
+    publish: function (publicationObject) {
+      // Placeholder for response object
+      var response;
+
+      // // Set up the urlPrefix
+      var urlPrefix = self.adminApi.v1.urlPrefixes.config;
+
+      // Set up request url
+      var url = self.baseUrl + urlPrefix + "publish";
+
+      // Create temporary options object
+      var localOptions = {headers: self.headers};
+
+      // Extend the Options object with the User object
+      localOptions.data = publicationObject;
+
+      try {
+        // Make GET request to API Umbrella
+        response = HTTP.post(url, localOptions);
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
+
+      return response;
+    },
+    /*
+    Publish changes for a single API Backend by ID
+    */
+    publishSingleApiBackend: function (apiBackendId) {
+      // Placeholder for response object
+      var response;
+
+      // // Set up the urlPrefix
+      var urlPrefix = self.adminApi.v1.urlPrefixes.config;
+
+      // Set up request url
+      var url = self.baseUrl + urlPrefix + "publish";
+
+      // Create temporary options object
+      var localOptions = {headers: self.headers};
+
+      // Extend the Options object with the User object
+      localOptions.data = {
+        "config": {
+          "apis": {}
+        }
+      };
+
+      // Add API to config.apis object using bracket notation
+      localOptions.data.config.apis[apiBackendId] = {"publish": "1"};
+
+      try {
+        // Make GET request to API Umbrella
+        response = HTTP.post(url, localOptions);
+      } catch (error) {
+        // Enhance error with http_status and backend_errors properties
+        throw new ApiUmbrellaError(error);
+      }
 
       return response;
     }
