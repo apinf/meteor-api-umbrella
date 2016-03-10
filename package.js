@@ -1,5 +1,5 @@
 Package.describe({
-  name: "brylie:api-umbrella",
+  name: "apinf:api-umbrella",
   summary: "Wrapper for API Umbrella Admin API.",
   version: "1.4.1",
   git: "https://github.com/apinf/meteor-api-umbrella.git"
@@ -18,7 +18,7 @@ Package.onUse(function(api) {
 
 Package.onTest(function (api) {
   api.use(["tinytest", "underscore"]);
-  api.use("brylie:api-umbrella");
+  api.use("apinf:api-umbrella");
 
   api.addFiles("tests/server/configuration-tests.js", ["server"]);
   api.addFiles("tests/server/admin-api/v1/adminUsers.js", ["server"]);
