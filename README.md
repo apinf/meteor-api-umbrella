@@ -6,7 +6,7 @@ This package provides helper methods to interact with the [API Umbrella Admin AP
 # Installation
 Install the package in your project with the following command:
 ```
-meteor add brylie:api-umbrella
+meteor add apinf:api-umbrella
 ```
 
 # Configuration
